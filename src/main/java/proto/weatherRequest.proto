@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+option java_multiple_files = true;
+option java_generic_services = true;
+option java_package = "proto.weather";
+
+// The greeting service definition.
+service WeatherData {
+  rpc SaveWeatherData (ProtoWeatherData) returns (ProtoSavedReply);
+  rpc GetWeatherData(ProtoWeatherDataRequest) returns (ProtoWeatherData);
+  rpc GetLastDataPoint(ProtoWeatherDataRequest) returns (ProtoWeatherData);
+  rpc GetWeatherDataBetween(ProtoTimeBlock) returns (ProtoWeatherData);
+  rpc GetWeatherDataByStation(ProtoWeatherStation) returns(ProtoWeatherData);
+}
+// The request message containing the user's name.
+message ProtoWeatherDataPoint {
+  int32 avgWindSpeed = 1;
+  int32 barometer = 2;
+  int32 battLevel = 3;
+  int32 insideHum = 4;
+  int32 insideTemp = 5;
+  int32 outsideHum = 6;
+  int32 outsideTemp = 7;
+  int32 rainRate = 8;
+  int32 solarRad = 9;
+  ProtoWeatherStation station = 10;
+  int32 sunrise = 11;
+  int32 sunset = 12;
+  google.protobuf.Timestamp timestamp = 13;
+  int32 ts = 14;
+  int32 UVLevel = 15;
+  int32 windSpeed = 16;
+  int32 windDir = 17;
+  int32 xmitBatt = 18;
+}
+
+message ProtoWeatherStation{
+  int32 stationId = 1;
+  string name = 2;
+  string location = 3;
+  string description = 4;
+}
+
+message ProtoWeatherData{
+  repeated ProtoWeatherDataPoint WeatherDataPoints = 1;
+}
+
+// The response message containing the greetings.
+message ProtoSavedReply {
+  string message = 1;
+}
+
+message ProtoWeatherDataRequest{
+  string timeunit = 1;
+  int32 timeAmount = 2;
+}
+
+message ProtoTimeBlock{
+  google.protobuf.Timestamp timeStart = 1;
+  google.protobuf.Timestamp timeEnd = 2;
+}
