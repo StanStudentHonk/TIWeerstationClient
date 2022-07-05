@@ -2,10 +2,10 @@
 
 ## How to use
 
--- dbConnection
+###dbConnection package
 Same methods are available in this version as in the older one.
 
---proto
+###proto packages
 Proto is used to communicate with the back-end proto files don't need to be used by the student.
 
 ## Run client:
