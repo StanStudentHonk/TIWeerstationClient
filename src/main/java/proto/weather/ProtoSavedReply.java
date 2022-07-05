@@ -5,7 +5,7 @@ package proto.weather;
 
 /**
  * <pre>
- * The response message containing the greetings.
+ * The response message containing a message.
  * </pre>
  *
  * Protobuf type {@code ProtoSavedReply}
@@ -57,6 +57,11 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             message_ = s;
+            break;
+          }
+          case 16: {
+
+            statusCode_ = input.readInt32();
             break;
           }
           default: {
@@ -131,6 +136,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int STATUSCODE_FIELD_NUMBER = 2;
+  private int statusCode_;
+  /**
+   * <code>int32 statusCode = 2;</code>
+   * @return The statusCode.
+   */
+  @java.lang.Override
+  public int getStatusCode() {
+    return statusCode_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -148,6 +164,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
     }
+    if (statusCode_ != 0) {
+      output.writeInt32(2, statusCode_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -159,6 +178,10 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
+    }
+    if (statusCode_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(2, statusCode_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -177,6 +200,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getMessage()
         .equals(other.getMessage())) return false;
+    if (getStatusCode()
+        != other.getStatusCode()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -190,6 +215,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getMessage().hashCode();
+    hash = (37 * hash) + STATUSCODE_FIELD_NUMBER;
+    hash = (53 * hash) + getStatusCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -287,7 +314,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The response message containing the greetings.
+   * The response message containing a message.
    * </pre>
    *
    * Protobuf type {@code ProtoSavedReply}
@@ -329,6 +356,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       message_ = "";
 
+      statusCode_ = 0;
+
       return this;
     }
 
@@ -356,6 +385,7 @@ private static final long serialVersionUID = 0L;
     public proto.weather.ProtoSavedReply buildPartial() {
       proto.weather.ProtoSavedReply result = new proto.weather.ProtoSavedReply(this);
       result.message_ = message_;
+      result.statusCode_ = statusCode_;
       onBuilt();
       return result;
     }
@@ -407,6 +437,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
         onChanged();
+      }
+      if (other.getStatusCode() != 0) {
+        setStatusCode(other.getStatusCode());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -509,6 +542,37 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       message_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int statusCode_ ;
+    /**
+     * <code>int32 statusCode = 2;</code>
+     * @return The statusCode.
+     */
+    @java.lang.Override
+    public int getStatusCode() {
+      return statusCode_;
+    }
+    /**
+     * <code>int32 statusCode = 2;</code>
+     * @param value The statusCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusCode(int value) {
+      
+      statusCode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 statusCode = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStatusCode() {
+      
+      statusCode_ = 0;
       onChanged();
       return this;
     }

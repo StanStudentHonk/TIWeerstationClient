@@ -5,7 +5,7 @@ package proto.weather;
 
 /**
  * <pre>
- * The request message containing the user's name.
+ * Request containing weatherdata of a single point in time
  * </pre>
  *
  * Protobuf type {@code ProtoWeatherDataPoint}
@@ -774,7 +774,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The request message containing the user's name.
+   * Request containing weatherdata of a single point in time
    * </pre>
    *
    * Protobuf type {@code ProtoWeatherDataPoint}

@@ -1,14 +1,16 @@
 import dbConnection.DatabaseConnection;
 import dbConnection.RawMeasurement;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class main {
     public static void main(String[] args) {
         DatabaseConnection db = new DatabaseConnection();
-        ArrayList<RawMeasurement> measurements = db.getMeasurementsLastMonth();
-        for(RawMeasurement rm : measurements){
-            System.out.println(rm.toString());
-        }
+        LocalDateTime ldt = LocalDateTime.now();
+        ldt = ldt.minusYears(4);
+        System.out.println(ldt);
+        ArrayList<RawMeasurement> rm = db.getMeasurementsSince(ldt);
+        System.out.println(rm.size() + "");
     }
 }

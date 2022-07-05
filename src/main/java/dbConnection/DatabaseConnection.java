@@ -15,8 +15,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class DatabaseConnection {
+
+    // aanpassen naar server host en port
     public static final String host = "localhost";
     public static final int port = 5000;
+    public static final int responseSizeBytes = 32000000;
     private ManagedChannel channel;
     private WeatherDataGrpc.WeatherDataBlockingStub blockingStub;
     private WeatherDataGrpc.WeatherDataStub asyncStub;
@@ -27,6 +30,7 @@ public class DatabaseConnection {
 
     /** Construct client for accessing RouteGuide server using the existing channel. */
     public DatabaseConnection(ManagedChannelBuilder<?> channelBuilder) {
+        channelBuilder.maxInboundMessageSize(responseSizeBytes);
         channel = channelBuilder.build();
         blockingStub = WeatherDataGrpc.newBlockingStub(channel);
         asyncStub = WeatherDataGrpc.newStub(channel);
@@ -35,12 +39,8 @@ public class DatabaseConnection {
     public RawMeasurement getMostRecentMeasurement()
     {
         ProtoWeatherDataRequest request = ProtoWeatherDataRequest.newBuilder().setTimeAmount(1).setTimeunit("year").build();
-        List<RawMeasurement> rawMeasurements = this.blockingStub.getLastDataPoint(request).getWeatherDataPointsList()
-                .stream()
-                .map(point -> {
-                    return new RawMeasurement(point);
-                }).collect(Collectors.toList());
-        return rawMeasurements.get(0);
+        RawMeasurement rawMeasurements = new RawMeasurement(this.blockingStub.getLastDataPoint(request));
+        return rawMeasurements;
     }
 
     public ArrayList<RawMeasurement> getMeasurementsBetween(LocalDateTime begin, LocalDateTime end)

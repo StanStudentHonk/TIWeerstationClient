@@ -4,22 +4,18 @@
 package proto.weather;
 
 /**
- * <pre>
- *A message containing multiple weatherdatapoints
- * </pre>
- *
- * Protobuf type {@code ProtoWeatherData}
+ * Protobuf type {@code ProtoWeatherDataResponse}
  */
-public final class ProtoWeatherData extends
+public final class ProtoWeatherDataResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:ProtoWeatherData)
-    ProtoWeatherDataOrBuilder {
+    // @@protoc_insertion_point(message_implements:ProtoWeatherDataResponse)
+    ProtoWeatherDataResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ProtoWeatherData.newBuilder() to construct.
-  private ProtoWeatherData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ProtoWeatherDataResponse.newBuilder() to construct.
+  private ProtoWeatherDataResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ProtoWeatherData() {
+  private ProtoWeatherDataResponse() {
     weatherDataPoints_ = java.util.Collections.emptyList();
   }
 
@@ -27,7 +23,7 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(
       UnusedPrivateParameter unused) {
-    return new ProtoWeatherData();
+    return new ProtoWeatherDataResponse();
   }
 
   @java.lang.Override
@@ -35,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ProtoWeatherData(
+  private ProtoWeatherDataResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -61,6 +57,11 @@ private static final long serialVersionUID = 0L;
             }
             weatherDataPoints_.add(
                 input.readMessage(proto.weather.ProtoWeatherDataPoint.parser(), extensionRegistry));
+            break;
+          }
+          case 16: {
+
+            statusCode_ = input.readInt32();
             break;
           }
           default: {
@@ -89,15 +90,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return proto.weather.WeatherRequest.internal_static_ProtoWeatherData_descriptor;
+    return proto.weather.WeatherRequest.internal_static_ProtoWeatherDataResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return proto.weather.WeatherRequest.internal_static_ProtoWeatherData_fieldAccessorTable
+    return proto.weather.WeatherRequest.internal_static_ProtoWeatherDataResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            proto.weather.ProtoWeatherData.class, proto.weather.ProtoWeatherData.Builder.class);
+            proto.weather.ProtoWeatherDataResponse.class, proto.weather.ProtoWeatherDataResponse.Builder.class);
   }
 
   public static final int WEATHERDATAPOINTS_FIELD_NUMBER = 1;
@@ -140,6 +141,17 @@ private static final long serialVersionUID = 0L;
     return weatherDataPoints_.get(index);
   }
 
+  public static final int STATUSCODE_FIELD_NUMBER = 2;
+  private int statusCode_;
+  /**
+   * <code>int32 statusCode = 2;</code>
+   * @return The statusCode.
+   */
+  @java.lang.Override
+  public int getStatusCode() {
+    return statusCode_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -157,6 +169,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < weatherDataPoints_.size(); i++) {
       output.writeMessage(1, weatherDataPoints_.get(i));
     }
+    if (statusCode_ != 0) {
+      output.writeInt32(2, statusCode_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -170,6 +185,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, weatherDataPoints_.get(i));
     }
+    if (statusCode_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(2, statusCode_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -180,13 +199,15 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof proto.weather.ProtoWeatherData)) {
+    if (!(obj instanceof proto.weather.ProtoWeatherDataResponse)) {
       return super.equals(obj);
     }
-    proto.weather.ProtoWeatherData other = (proto.weather.ProtoWeatherData) obj;
+    proto.weather.ProtoWeatherDataResponse other = (proto.weather.ProtoWeatherDataResponse) obj;
 
     if (!getWeatherDataPointsList()
         .equals(other.getWeatherDataPointsList())) return false;
+    if (getStatusCode()
+        != other.getStatusCode()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -202,74 +223,76 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + WEATHERDATAPOINTS_FIELD_NUMBER;
       hash = (53 * hash) + getWeatherDataPointsList().hashCode();
     }
+    hash = (37 * hash) + STATUSCODE_FIELD_NUMBER;
+    hash = (53 * hash) + getStatusCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static proto.weather.ProtoWeatherData parseFrom(
+  public static proto.weather.ProtoWeatherDataResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static proto.weather.ProtoWeatherData parseFrom(
+  public static proto.weather.ProtoWeatherDataResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static proto.weather.ProtoWeatherData parseFrom(
+  public static proto.weather.ProtoWeatherDataResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static proto.weather.ProtoWeatherData parseFrom(
+  public static proto.weather.ProtoWeatherDataResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static proto.weather.ProtoWeatherData parseFrom(byte[] data)
+  public static proto.weather.ProtoWeatherDataResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static proto.weather.ProtoWeatherData parseFrom(
+  public static proto.weather.ProtoWeatherDataResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static proto.weather.ProtoWeatherData parseFrom(java.io.InputStream input)
+  public static proto.weather.ProtoWeatherDataResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static proto.weather.ProtoWeatherData parseFrom(
+  public static proto.weather.ProtoWeatherDataResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static proto.weather.ProtoWeatherData parseDelimitedFrom(java.io.InputStream input)
+  public static proto.weather.ProtoWeatherDataResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static proto.weather.ProtoWeatherData parseDelimitedFrom(
+  public static proto.weather.ProtoWeatherDataResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static proto.weather.ProtoWeatherData parseFrom(
+  public static proto.weather.ProtoWeatherDataResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static proto.weather.ProtoWeatherData parseFrom(
+  public static proto.weather.ProtoWeatherDataResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -282,7 +305,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(proto.weather.ProtoWeatherData prototype) {
+  public static Builder newBuilder(proto.weather.ProtoWeatherDataResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -298,30 +321,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   *A message containing multiple weatherdatapoints
-   * </pre>
-   *
-   * Protobuf type {@code ProtoWeatherData}
+   * Protobuf type {@code ProtoWeatherDataResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:ProtoWeatherData)
-      proto.weather.ProtoWeatherDataOrBuilder {
+      // @@protoc_insertion_point(builder_implements:ProtoWeatherDataResponse)
+      proto.weather.ProtoWeatherDataResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return proto.weather.WeatherRequest.internal_static_ProtoWeatherData_descriptor;
+      return proto.weather.WeatherRequest.internal_static_ProtoWeatherDataResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return proto.weather.WeatherRequest.internal_static_ProtoWeatherData_fieldAccessorTable
+      return proto.weather.WeatherRequest.internal_static_ProtoWeatherDataResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              proto.weather.ProtoWeatherData.class, proto.weather.ProtoWeatherData.Builder.class);
+              proto.weather.ProtoWeatherDataResponse.class, proto.weather.ProtoWeatherDataResponse.Builder.class);
     }
 
-    // Construct using proto.weather.ProtoWeatherData.newBuilder()
+    // Construct using proto.weather.ProtoWeatherDataResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -346,23 +365,25 @@ private static final long serialVersionUID = 0L;
       } else {
         weatherDataPointsBuilder_.clear();
       }
+      statusCode_ = 0;
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return proto.weather.WeatherRequest.internal_static_ProtoWeatherData_descriptor;
+      return proto.weather.WeatherRequest.internal_static_ProtoWeatherDataResponse_descriptor;
     }
 
     @java.lang.Override
-    public proto.weather.ProtoWeatherData getDefaultInstanceForType() {
-      return proto.weather.ProtoWeatherData.getDefaultInstance();
+    public proto.weather.ProtoWeatherDataResponse getDefaultInstanceForType() {
+      return proto.weather.ProtoWeatherDataResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public proto.weather.ProtoWeatherData build() {
-      proto.weather.ProtoWeatherData result = buildPartial();
+    public proto.weather.ProtoWeatherDataResponse build() {
+      proto.weather.ProtoWeatherDataResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -370,8 +391,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public proto.weather.ProtoWeatherData buildPartial() {
-      proto.weather.ProtoWeatherData result = new proto.weather.ProtoWeatherData(this);
+    public proto.weather.ProtoWeatherDataResponse buildPartial() {
+      proto.weather.ProtoWeatherDataResponse result = new proto.weather.ProtoWeatherDataResponse(this);
       int from_bitField0_ = bitField0_;
       if (weatherDataPointsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -382,6 +403,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.weatherDataPoints_ = weatherDataPointsBuilder_.build();
       }
+      result.statusCode_ = statusCode_;
       onBuilt();
       return result;
     }
@@ -420,16 +442,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof proto.weather.ProtoWeatherData) {
-        return mergeFrom((proto.weather.ProtoWeatherData)other);
+      if (other instanceof proto.weather.ProtoWeatherDataResponse) {
+        return mergeFrom((proto.weather.ProtoWeatherDataResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(proto.weather.ProtoWeatherData other) {
-      if (other == proto.weather.ProtoWeatherData.getDefaultInstance()) return this;
+    public Builder mergeFrom(proto.weather.ProtoWeatherDataResponse other) {
+      if (other == proto.weather.ProtoWeatherDataResponse.getDefaultInstance()) return this;
       if (weatherDataPointsBuilder_ == null) {
         if (!other.weatherDataPoints_.isEmpty()) {
           if (weatherDataPoints_.isEmpty()) {
@@ -456,6 +478,9 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (other.getStatusCode() != 0) {
+        setStatusCode(other.getStatusCode());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -471,11 +496,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      proto.weather.ProtoWeatherData parsedMessage = null;
+      proto.weather.ProtoWeatherDataResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (proto.weather.ProtoWeatherData) e.getUnfinishedMessage();
+        parsedMessage = (proto.weather.ProtoWeatherDataResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -725,6 +750,37 @@ private static final long serialVersionUID = 0L;
       }
       return weatherDataPointsBuilder_;
     }
+
+    private int statusCode_ ;
+    /**
+     * <code>int32 statusCode = 2;</code>
+     * @return The statusCode.
+     */
+    @java.lang.Override
+    public int getStatusCode() {
+      return statusCode_;
+    }
+    /**
+     * <code>int32 statusCode = 2;</code>
+     * @param value The statusCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusCode(int value) {
+      
+      statusCode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>int32 statusCode = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStatusCode() {
+      
+      statusCode_ = 0;
+      onChanged();
+      return this;
+    }
     @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -738,41 +794,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:ProtoWeatherData)
+    // @@protoc_insertion_point(builder_scope:ProtoWeatherDataResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:ProtoWeatherData)
-  private static final proto.weather.ProtoWeatherData DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:ProtoWeatherDataResponse)
+  private static final proto.weather.ProtoWeatherDataResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new proto.weather.ProtoWeatherData();
+    DEFAULT_INSTANCE = new proto.weather.ProtoWeatherDataResponse();
   }
 
-  public static proto.weather.ProtoWeatherData getDefaultInstance() {
+  public static proto.weather.ProtoWeatherDataResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ProtoWeatherData>
-      PARSER = new com.google.protobuf.AbstractParser<ProtoWeatherData>() {
+  private static final com.google.protobuf.Parser<ProtoWeatherDataResponse>
+      PARSER = new com.google.protobuf.AbstractParser<ProtoWeatherDataResponse>() {
     @java.lang.Override
-    public ProtoWeatherData parsePartialFrom(
+    public ProtoWeatherDataResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ProtoWeatherData(input, extensionRegistry);
+      return new ProtoWeatherDataResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ProtoWeatherData> parser() {
+  public static com.google.protobuf.Parser<ProtoWeatherDataResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ProtoWeatherData> getParserForType() {
+  public com.google.protobuf.Parser<ProtoWeatherDataResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public proto.weather.ProtoWeatherData getDefaultInstanceForType() {
+  public proto.weather.ProtoWeatherDataResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -4,7 +4,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
  * <pre>
- * The greeting service definition.
+ * The Weatherdata service definition.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -15,7 +15,7 @@ public final class WeatherDataGrpc {
 
   private WeatherDataGrpc() {}
 
-  public static final String SERVICE_NAME = "weatherRequest.WeatherData";
+  public static final String SERVICE_NAME = "WeatherData";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<proto.weather.ProtoWeatherData,
@@ -50,28 +50,28 @@ public final class WeatherDataGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<proto.weather.ProtoWeatherDataRequest,
-      proto.weather.ProtoWeatherData> getGetWeatherDataMethod;
+      proto.weather.ProtoWeatherDataResponse> getGetWeatherDataMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "GetWeatherData",
       requestType = proto.weather.ProtoWeatherDataRequest.class,
-      responseType = proto.weather.ProtoWeatherData.class,
+      responseType = proto.weather.ProtoWeatherDataResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<proto.weather.ProtoWeatherDataRequest,
-      proto.weather.ProtoWeatherData> getGetWeatherDataMethod() {
-    io.grpc.MethodDescriptor<proto.weather.ProtoWeatherDataRequest, proto.weather.ProtoWeatherData> getGetWeatherDataMethod;
+      proto.weather.ProtoWeatherDataResponse> getGetWeatherDataMethod() {
+    io.grpc.MethodDescriptor<proto.weather.ProtoWeatherDataRequest, proto.weather.ProtoWeatherDataResponse> getGetWeatherDataMethod;
     if ((getGetWeatherDataMethod = WeatherDataGrpc.getGetWeatherDataMethod) == null) {
       synchronized (WeatherDataGrpc.class) {
         if ((getGetWeatherDataMethod = WeatherDataGrpc.getGetWeatherDataMethod) == null) {
           WeatherDataGrpc.getGetWeatherDataMethod = getGetWeatherDataMethod =
-              io.grpc.MethodDescriptor.<proto.weather.ProtoWeatherDataRequest, proto.weather.ProtoWeatherData>newBuilder()
+              io.grpc.MethodDescriptor.<proto.weather.ProtoWeatherDataRequest, proto.weather.ProtoWeatherDataResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetWeatherData"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   proto.weather.ProtoWeatherDataRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  proto.weather.ProtoWeatherData.getDefaultInstance()))
+                  proto.weather.ProtoWeatherDataResponse.getDefaultInstance()))
               .setSchemaDescriptor(new WeatherDataMethodDescriptorSupplier("GetWeatherData"))
               .build();
         }
@@ -81,28 +81,28 @@ public final class WeatherDataGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<proto.weather.ProtoWeatherDataRequest,
-      proto.weather.ProtoWeatherData> getGetLastDataPointMethod;
+      proto.weather.ProtoWeatherDataPoint> getGetLastDataPointMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "GetLastDataPoint",
       requestType = proto.weather.ProtoWeatherDataRequest.class,
-      responseType = proto.weather.ProtoWeatherData.class,
+      responseType = proto.weather.ProtoWeatherDataPoint.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<proto.weather.ProtoWeatherDataRequest,
-      proto.weather.ProtoWeatherData> getGetLastDataPointMethod() {
-    io.grpc.MethodDescriptor<proto.weather.ProtoWeatherDataRequest, proto.weather.ProtoWeatherData> getGetLastDataPointMethod;
+      proto.weather.ProtoWeatherDataPoint> getGetLastDataPointMethod() {
+    io.grpc.MethodDescriptor<proto.weather.ProtoWeatherDataRequest, proto.weather.ProtoWeatherDataPoint> getGetLastDataPointMethod;
     if ((getGetLastDataPointMethod = WeatherDataGrpc.getGetLastDataPointMethod) == null) {
       synchronized (WeatherDataGrpc.class) {
         if ((getGetLastDataPointMethod = WeatherDataGrpc.getGetLastDataPointMethod) == null) {
           WeatherDataGrpc.getGetLastDataPointMethod = getGetLastDataPointMethod =
-              io.grpc.MethodDescriptor.<proto.weather.ProtoWeatherDataRequest, proto.weather.ProtoWeatherData>newBuilder()
+              io.grpc.MethodDescriptor.<proto.weather.ProtoWeatherDataRequest, proto.weather.ProtoWeatherDataPoint>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetLastDataPoint"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   proto.weather.ProtoWeatherDataRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  proto.weather.ProtoWeatherData.getDefaultInstance()))
+                  proto.weather.ProtoWeatherDataPoint.getDefaultInstance()))
               .setSchemaDescriptor(new WeatherDataMethodDescriptorSupplier("GetLastDataPoint"))
               .build();
         }
@@ -112,28 +112,28 @@ public final class WeatherDataGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<proto.weather.ProtoTimeBlock,
-      proto.weather.ProtoWeatherData> getGetWeatherDataBetweenMethod;
+      proto.weather.ProtoWeatherDataResponse> getGetWeatherDataBetweenMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "GetWeatherDataBetween",
       requestType = proto.weather.ProtoTimeBlock.class,
-      responseType = proto.weather.ProtoWeatherData.class,
+      responseType = proto.weather.ProtoWeatherDataResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<proto.weather.ProtoTimeBlock,
-      proto.weather.ProtoWeatherData> getGetWeatherDataBetweenMethod() {
-    io.grpc.MethodDescriptor<proto.weather.ProtoTimeBlock, proto.weather.ProtoWeatherData> getGetWeatherDataBetweenMethod;
+      proto.weather.ProtoWeatherDataResponse> getGetWeatherDataBetweenMethod() {
+    io.grpc.MethodDescriptor<proto.weather.ProtoTimeBlock, proto.weather.ProtoWeatherDataResponse> getGetWeatherDataBetweenMethod;
     if ((getGetWeatherDataBetweenMethod = WeatherDataGrpc.getGetWeatherDataBetweenMethod) == null) {
       synchronized (WeatherDataGrpc.class) {
         if ((getGetWeatherDataBetweenMethod = WeatherDataGrpc.getGetWeatherDataBetweenMethod) == null) {
           WeatherDataGrpc.getGetWeatherDataBetweenMethod = getGetWeatherDataBetweenMethod =
-              io.grpc.MethodDescriptor.<proto.weather.ProtoTimeBlock, proto.weather.ProtoWeatherData>newBuilder()
+              io.grpc.MethodDescriptor.<proto.weather.ProtoTimeBlock, proto.weather.ProtoWeatherDataResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetWeatherDataBetween"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   proto.weather.ProtoTimeBlock.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  proto.weather.ProtoWeatherData.getDefaultInstance()))
+                  proto.weather.ProtoWeatherDataResponse.getDefaultInstance()))
               .setSchemaDescriptor(new WeatherDataMethodDescriptorSupplier("GetWeatherDataBetween"))
               .build();
         }
@@ -143,28 +143,28 @@ public final class WeatherDataGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<proto.weather.ProtoWeatherStation,
-      proto.weather.ProtoWeatherData> getGetWeatherDataByStationMethod;
+      proto.weather.ProtoWeatherDataResponse> getGetWeatherDataByStationMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "GetWeatherDataByStation",
       requestType = proto.weather.ProtoWeatherStation.class,
-      responseType = proto.weather.ProtoWeatherData.class,
+      responseType = proto.weather.ProtoWeatherDataResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<proto.weather.ProtoWeatherStation,
-      proto.weather.ProtoWeatherData> getGetWeatherDataByStationMethod() {
-    io.grpc.MethodDescriptor<proto.weather.ProtoWeatherStation, proto.weather.ProtoWeatherData> getGetWeatherDataByStationMethod;
+      proto.weather.ProtoWeatherDataResponse> getGetWeatherDataByStationMethod() {
+    io.grpc.MethodDescriptor<proto.weather.ProtoWeatherStation, proto.weather.ProtoWeatherDataResponse> getGetWeatherDataByStationMethod;
     if ((getGetWeatherDataByStationMethod = WeatherDataGrpc.getGetWeatherDataByStationMethod) == null) {
       synchronized (WeatherDataGrpc.class) {
         if ((getGetWeatherDataByStationMethod = WeatherDataGrpc.getGetWeatherDataByStationMethod) == null) {
           WeatherDataGrpc.getGetWeatherDataByStationMethod = getGetWeatherDataByStationMethod =
-              io.grpc.MethodDescriptor.<proto.weather.ProtoWeatherStation, proto.weather.ProtoWeatherData>newBuilder()
+              io.grpc.MethodDescriptor.<proto.weather.ProtoWeatherStation, proto.weather.ProtoWeatherDataResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetWeatherDataByStation"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   proto.weather.ProtoWeatherStation.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  proto.weather.ProtoWeatherData.getDefaultInstance()))
+                  proto.weather.ProtoWeatherDataResponse.getDefaultInstance()))
               .setSchemaDescriptor(new WeatherDataMethodDescriptorSupplier("GetWeatherDataByStation"))
               .build();
         }
@@ -219,12 +219,15 @@ public final class WeatherDataGrpc {
 
   /**
    * <pre>
-   * The greeting service definition.
+   * The Weatherdata service definition.
    * </pre>
    */
   public static abstract class WeatherDataImplBase implements io.grpc.BindableService {
 
     /**
+     * <pre>
+     * Sends weather data to server to be saved
+     * </pre>
      */
     public void saveWeatherData(proto.weather.ProtoWeatherData request,
         io.grpc.stub.StreamObserver<proto.weather.ProtoSavedReply> responseObserver) {
@@ -234,28 +237,28 @@ public final class WeatherDataGrpc {
     /**
      */
     public void getWeatherData(proto.weather.ProtoWeatherDataRequest request,
-        io.grpc.stub.StreamObserver<proto.weather.ProtoWeatherData> responseObserver) {
+        io.grpc.stub.StreamObserver<proto.weather.ProtoWeatherDataResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetWeatherDataMethod(), responseObserver);
     }
 
     /**
      */
     public void getLastDataPoint(proto.weather.ProtoWeatherDataRequest request,
-        io.grpc.stub.StreamObserver<proto.weather.ProtoWeatherData> responseObserver) {
+        io.grpc.stub.StreamObserver<proto.weather.ProtoWeatherDataPoint> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetLastDataPointMethod(), responseObserver);
     }
 
     /**
      */
     public void getWeatherDataBetween(proto.weather.ProtoTimeBlock request,
-        io.grpc.stub.StreamObserver<proto.weather.ProtoWeatherData> responseObserver) {
+        io.grpc.stub.StreamObserver<proto.weather.ProtoWeatherDataResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetWeatherDataBetweenMethod(), responseObserver);
     }
 
     /**
      */
     public void getWeatherDataByStation(proto.weather.ProtoWeatherStation request,
-        io.grpc.stub.StreamObserver<proto.weather.ProtoWeatherData> responseObserver) {
+        io.grpc.stub.StreamObserver<proto.weather.ProtoWeatherDataResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetWeatherDataByStationMethod(), responseObserver);
     }
 
@@ -273,28 +276,28 @@ public final class WeatherDataGrpc {
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 proto.weather.ProtoWeatherDataRequest,
-                proto.weather.ProtoWeatherData>(
+                proto.weather.ProtoWeatherDataResponse>(
                   this, METHODID_GET_WEATHER_DATA)))
           .addMethod(
             getGetLastDataPointMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 proto.weather.ProtoWeatherDataRequest,
-                proto.weather.ProtoWeatherData>(
+                proto.weather.ProtoWeatherDataPoint>(
                   this, METHODID_GET_LAST_DATA_POINT)))
           .addMethod(
             getGetWeatherDataBetweenMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 proto.weather.ProtoTimeBlock,
-                proto.weather.ProtoWeatherData>(
+                proto.weather.ProtoWeatherDataResponse>(
                   this, METHODID_GET_WEATHER_DATA_BETWEEN)))
           .addMethod(
             getGetWeatherDataByStationMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 proto.weather.ProtoWeatherStation,
-                proto.weather.ProtoWeatherData>(
+                proto.weather.ProtoWeatherDataResponse>(
                   this, METHODID_GET_WEATHER_DATA_BY_STATION)))
           .build();
     }
@@ -302,7 +305,7 @@ public final class WeatherDataGrpc {
 
   /**
    * <pre>
-   * The greeting service definition.
+   * The Weatherdata service definition.
    * </pre>
    */
   public static final class WeatherDataStub extends io.grpc.stub.AbstractAsyncStub<WeatherDataStub> {
@@ -318,6 +321,9 @@ public final class WeatherDataGrpc {
     }
 
     /**
+     * <pre>
+     * Sends weather data to server to be saved
+     * </pre>
      */
     public void saveWeatherData(proto.weather.ProtoWeatherData request,
         io.grpc.stub.StreamObserver<proto.weather.ProtoSavedReply> responseObserver) {
@@ -328,7 +334,7 @@ public final class WeatherDataGrpc {
     /**
      */
     public void getWeatherData(proto.weather.ProtoWeatherDataRequest request,
-        io.grpc.stub.StreamObserver<proto.weather.ProtoWeatherData> responseObserver) {
+        io.grpc.stub.StreamObserver<proto.weather.ProtoWeatherDataResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetWeatherDataMethod(), getCallOptions()), request, responseObserver);
     }
@@ -336,7 +342,7 @@ public final class WeatherDataGrpc {
     /**
      */
     public void getLastDataPoint(proto.weather.ProtoWeatherDataRequest request,
-        io.grpc.stub.StreamObserver<proto.weather.ProtoWeatherData> responseObserver) {
+        io.grpc.stub.StreamObserver<proto.weather.ProtoWeatherDataPoint> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetLastDataPointMethod(), getCallOptions()), request, responseObserver);
     }
@@ -344,7 +350,7 @@ public final class WeatherDataGrpc {
     /**
      */
     public void getWeatherDataBetween(proto.weather.ProtoTimeBlock request,
-        io.grpc.stub.StreamObserver<proto.weather.ProtoWeatherData> responseObserver) {
+        io.grpc.stub.StreamObserver<proto.weather.ProtoWeatherDataResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetWeatherDataBetweenMethod(), getCallOptions()), request, responseObserver);
     }
@@ -352,7 +358,7 @@ public final class WeatherDataGrpc {
     /**
      */
     public void getWeatherDataByStation(proto.weather.ProtoWeatherStation request,
-        io.grpc.stub.StreamObserver<proto.weather.ProtoWeatherData> responseObserver) {
+        io.grpc.stub.StreamObserver<proto.weather.ProtoWeatherDataResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetWeatherDataByStationMethod(), getCallOptions()), request, responseObserver);
     }
@@ -360,7 +366,7 @@ public final class WeatherDataGrpc {
 
   /**
    * <pre>
-   * The greeting service definition.
+   * The Weatherdata service definition.
    * </pre>
    */
   public static final class WeatherDataBlockingStub extends io.grpc.stub.AbstractBlockingStub<WeatherDataBlockingStub> {
@@ -376,6 +382,9 @@ public final class WeatherDataGrpc {
     }
 
     /**
+     * <pre>
+     * Sends weather data to server to be saved
+     * </pre>
      */
     public proto.weather.ProtoSavedReply saveWeatherData(proto.weather.ProtoWeatherData request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -384,28 +393,28 @@ public final class WeatherDataGrpc {
 
     /**
      */
-    public proto.weather.ProtoWeatherData getWeatherData(proto.weather.ProtoWeatherDataRequest request) {
+    public proto.weather.ProtoWeatherDataResponse getWeatherData(proto.weather.ProtoWeatherDataRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetWeatherDataMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public proto.weather.ProtoWeatherData getLastDataPoint(proto.weather.ProtoWeatherDataRequest request) {
+    public proto.weather.ProtoWeatherDataPoint getLastDataPoint(proto.weather.ProtoWeatherDataRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetLastDataPointMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public proto.weather.ProtoWeatherData getWeatherDataBetween(proto.weather.ProtoTimeBlock request) {
+    public proto.weather.ProtoWeatherDataResponse getWeatherDataBetween(proto.weather.ProtoTimeBlock request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetWeatherDataBetweenMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public proto.weather.ProtoWeatherData getWeatherDataByStation(proto.weather.ProtoWeatherStation request) {
+    public proto.weather.ProtoWeatherDataResponse getWeatherDataByStation(proto.weather.ProtoWeatherStation request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetWeatherDataByStationMethod(), getCallOptions(), request);
     }
@@ -413,7 +422,7 @@ public final class WeatherDataGrpc {
 
   /**
    * <pre>
-   * The greeting service definition.
+   * The Weatherdata service definition.
    * </pre>
    */
   public static final class WeatherDataFutureStub extends io.grpc.stub.AbstractFutureStub<WeatherDataFutureStub> {
@@ -429,6 +438,9 @@ public final class WeatherDataGrpc {
     }
 
     /**
+     * <pre>
+     * Sends weather data to server to be saved
+     * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<proto.weather.ProtoSavedReply> saveWeatherData(
         proto.weather.ProtoWeatherData request) {
@@ -438,7 +450,7 @@ public final class WeatherDataGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<proto.weather.ProtoWeatherData> getWeatherData(
+    public com.google.common.util.concurrent.ListenableFuture<proto.weather.ProtoWeatherDataResponse> getWeatherData(
         proto.weather.ProtoWeatherDataRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetWeatherDataMethod(), getCallOptions()), request);
@@ -446,7 +458,7 @@ public final class WeatherDataGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<proto.weather.ProtoWeatherData> getLastDataPoint(
+    public com.google.common.util.concurrent.ListenableFuture<proto.weather.ProtoWeatherDataPoint> getLastDataPoint(
         proto.weather.ProtoWeatherDataRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetLastDataPointMethod(), getCallOptions()), request);
@@ -454,7 +466,7 @@ public final class WeatherDataGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<proto.weather.ProtoWeatherData> getWeatherDataBetween(
+    public com.google.common.util.concurrent.ListenableFuture<proto.weather.ProtoWeatherDataResponse> getWeatherDataBetween(
         proto.weather.ProtoTimeBlock request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetWeatherDataBetweenMethod(), getCallOptions()), request);
@@ -462,7 +474,7 @@ public final class WeatherDataGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<proto.weather.ProtoWeatherData> getWeatherDataByStation(
+    public com.google.common.util.concurrent.ListenableFuture<proto.weather.ProtoWeatherDataResponse> getWeatherDataByStation(
         proto.weather.ProtoWeatherStation request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetWeatherDataByStationMethod(), getCallOptions()), request);
@@ -498,19 +510,19 @@ public final class WeatherDataGrpc {
           break;
         case METHODID_GET_WEATHER_DATA:
           serviceImpl.getWeatherData((proto.weather.ProtoWeatherDataRequest) request,
-              (io.grpc.stub.StreamObserver<proto.weather.ProtoWeatherData>) responseObserver);
+              (io.grpc.stub.StreamObserver<proto.weather.ProtoWeatherDataResponse>) responseObserver);
           break;
         case METHODID_GET_LAST_DATA_POINT:
           serviceImpl.getLastDataPoint((proto.weather.ProtoWeatherDataRequest) request,
-              (io.grpc.stub.StreamObserver<proto.weather.ProtoWeatherData>) responseObserver);
+              (io.grpc.stub.StreamObserver<proto.weather.ProtoWeatherDataPoint>) responseObserver);
           break;
         case METHODID_GET_WEATHER_DATA_BETWEEN:
           serviceImpl.getWeatherDataBetween((proto.weather.ProtoTimeBlock) request,
-              (io.grpc.stub.StreamObserver<proto.weather.ProtoWeatherData>) responseObserver);
+              (io.grpc.stub.StreamObserver<proto.weather.ProtoWeatherDataResponse>) responseObserver);
           break;
         case METHODID_GET_WEATHER_DATA_BY_STATION:
           serviceImpl.getWeatherDataByStation((proto.weather.ProtoWeatherStation) request,
-              (io.grpc.stub.StreamObserver<proto.weather.ProtoWeatherData>) responseObserver);
+              (io.grpc.stub.StreamObserver<proto.weather.ProtoWeatherDataResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();

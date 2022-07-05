@@ -4,6 +4,10 @@
 package proto.weather;
 
 /**
+ * <pre>
+ *A weather station
+ * </pre>
+ *
  * Protobuf type {@code ProtoWeatherStation}
  */
 public final class ProtoWeatherStation extends
@@ -419,6 +423,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   *A weather station
+   * </pre>
+   *
    * Protobuf type {@code ProtoWeatherStation}
    */
   public static final class Builder extends

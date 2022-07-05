@@ -18,4 +18,10 @@ public interface ProtoSavedReplyOrBuilder extends
    */
   com.google.protobuf.ByteString
       getMessageBytes();
+
+  /**
+   * <code>int32 statusCode = 2;</code>
+   * @return The statusCode.
+   */
+  int getStatusCode();
 }
